@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import { useState } from "react";
+
 import "./App.css";
 
-const Question = ({ question, options, answer }) => {
+const Question = (
+  { question, options, answer }: {
+    question: string;
+    options: any;
+    answer: string;
+  },
+) => {
   const [showMeanings, setShowMeanings] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
-  const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState<null | boolean>(null);
   console.log(options);
   const toggleMeanings = () => {
     setShowMeanings(!showMeanings);
   };
 
-  const handleOptionChange = (option) => {
+  const handleOptionChange = (option: any) => {
     setSelectedOption(option);
     setIsAnswerCorrect(null); // Reset the answer indicator when selecting a new option
   };

@@ -5,7 +5,7 @@ import Screen from "./screen";
 const App = () => {
   const [selectedChapter, setSelectedChapter] = useState(1);
 
-  const handleChapterChange = (event) => {
+  const handleChapterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedChapter(parseInt(event.target.value));
   };
 

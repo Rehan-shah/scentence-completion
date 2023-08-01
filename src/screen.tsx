@@ -1,11 +1,11 @@
 import { useState } from "react";
-import data from "./data.json";
+import Data from "./data.json";
 import Question from "./Question";
 import LastQuestion from "./LastQuestion";
 
-function Screen({ name_chapter }) {
+function Screen({ name_chapter }: any) {
   const [isShowingHistory, setShowingHistory] = useState(false);
-  function giveOptions(json) {
+  function giveOptions(json: any) {
     const hi = {
       "a": json["a"],
       "b": json["b"],
@@ -15,13 +15,13 @@ function Screen({ name_chapter }) {
     };
     return hi;
   }
-
+  let data: any = Data;
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>{name_chapter}</h1>{" "}
       <button
         style={{
-          mmrginRight: "auto",
+          marginRight: "auto",
           marginLeft: "auto",
           backgroundColor: "tan",
         }}

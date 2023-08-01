@@ -1,6 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const LastQuestion = ({ question, options, answer }) => {
+const LastQuestion = (
+  { question, options, answer }: {
+    question: string;
+    options: any;
+    answer: string;
+  },
+) => {
   const [showMeanings, setShowMeanings] = useState(false);
 
   const toggleMeanings = () => {
@@ -10,14 +16,14 @@ const LastQuestion = ({ question, options, answer }) => {
   console.log(question);
   console.log(typeof answer);
   let data = localStorage.getItem(question);
-  function wrong(key) {
+  function wrong(key: any) {
     data = data ?? JSON.stringify({ "selectedAnswer": "f" });
     let data_json = JSON.parse(data);
     let ans = data_json["selectedAnswer"] === key ? "wrong" : "";
     console.log();
     return ans;
   }
-  const right = (key) => {
+  const right = (key: any) => {
     if (key === answer) {
       return "right";
     }
